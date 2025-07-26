@@ -1,0 +1,15 @@
+{
+  "name": "@repo/test-web",
+  "scripts": {
+    "dev": "cypress open",
+    "exec": "cypress run",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.2.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.5",
+    "@cypress/webpack-preprocessor": "^6.0.4",
+    "cypress": "^14.5.3",
+    "typescript": "5.8.3"
+  }
+}

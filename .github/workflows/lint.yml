@@ -1,0 +1,25 @@
+name: lint
+
+on:
+  - pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: "node: install"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.15.0
+
+      - name: "npm: install"
+        run: npm install
+
+      - name: "prettier: run"
+        run: npx prettier --check .
+
+      - name: "eslint: run"
+        run: npm run lint

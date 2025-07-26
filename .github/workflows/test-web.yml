@@ -1,0 +1,31 @@
+name: test-web
+
+on:
+  - pull_request
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:22.15.0
+      options: --user 1001
+    strategy:
+      matrix:
+        browser:
+          - chrome
+          - firefox
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: "node: install"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.15.0
+
+      - name: "npm: install"
+        run: npm install
+
+      - name: "cy: run ${{ matrix.browser }}"
+        working-directory: apps/test-web
+        run: npx cypress run --browser ${{ matrix.browser }}
