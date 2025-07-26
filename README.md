@@ -2,10 +2,8 @@
 
 This repository contains two end-to-end test suites:
 
-- `test-web`: built with **Cypress** and **Cucumber (Gherkin)** to ensure high-confidence quality assurance testing for the frontend application.
-- `test-api`: ...
-
-It follows a **Behavior-Driven Development (BDD)** approach using human-readable feature files and reusable step definitions written in **TypeScript**.
+- `test-web`: built with **Cypress** and **Cucumber (Gherkin)** to ensure high-confidence quality assurance testing for the frontend application. It follows a **Behavior-Driven Development (BDD)** approach using human-readable feature files and reusable step definitions written in **TypeScript**.
+- `test-api`: built with **Jest**, **Axios**, **Faker** and **Fishery**.
 
 # 🚀 Getting Started
 
@@ -36,7 +34,7 @@ npx cypress run
 
 # Lint & Format
 
-```
+```bash
 npm run lint
 npm run format
 ```
