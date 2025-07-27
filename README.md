@@ -1,26 +1,53 @@
 # evinova-test
 
-This repository contains two end-to-end test suites:
+This repository serves as a comprehensive quality assurance testing suite for the Evinova testing interview assessment. It covers both **frontend** and **API** layers with dedicated frameworks and follows best practices in test automation.
 
-- `test-web`: built with **Cypress** and **Cucumber (Gherkin)** to ensure high-confidence quality assurance testing for the frontend application. It follows a **Behavior-Driven Development (BDD)** approach using human-readable feature files and reusable step definitions written in **TypeScript**.
-- `test-api`: an API automation framework using **Jest** for testing and **Zod** for schema validation. It features a modular design, tests the Reqres API for user retrieval, creation, and error handling and uses **faker** and **fishery** for dynamic data.
+## Overview
 
-## 🚀 Getting Started
+This monorepo includes two end-to-end test suites:
 
-### 🔧 Prerequisites
+### Part 1. `test-web`
 
-- Node.js >= 18.x
-- npm
+- Framework: **Cypress**, **Cucumber**, **TypeScript**
+- Pattern: **BDD** (Behavior-Driven Development)
+- Directory: [./test-web](./test-web)
+- Features:
+  - Feature files in **Gherkin** syntax
+  - Reusable and composable step definitions
 
-### 📦 Install Dependencies
+### Part 2. `test-api`
+
+- Framework: **Jest**, **Zod**
+- Pattern: Modular structure with dynamic mock data
+- Directory: [./test-api](./test-api)
+- Features:
+  - Tests the **Reqres API** for user retrieval, creation, and error handling.
+  - Schema validation with **Zod**
+  - Utilizes **faker** and **fishery** for dynamic test data generation.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) >= 18.x
+- [npm](https://www.npmjs.org/) 11.4.2
+
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-## Lint & Format
+### Additional Features
 
-```bash
-npm run lint
-npm run format
-```
+- Monorepo structure built with **turborepo**.
+- Keeps relevant code files clean with **prettier**.
+- Uses **eslint** to ensure high quality coding.
+- Implements **husky** for pre-commit hooks.
+- Uses commitlint to check the quality of git commit messages.
+- Contains a list of vscode extensions.
+- Utilises **.editorconfig** to ensure consistent code formatting.

@@ -1,9 +1,9 @@
-import { defineConfig } from "cypress";
 import { resolve } from "node:path";
 
-import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
 import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
+import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
+import { defineConfig } from "cypress";
 
 export default defineConfig({
   reporter: resolve(
@@ -35,6 +35,7 @@ export default defineConfig({
         }),
       );
 
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       require("cypress-mochawesome-reporter/plugin")(on);
 
       return config;

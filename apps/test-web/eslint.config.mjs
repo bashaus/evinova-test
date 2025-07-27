@@ -1,8 +1,8 @@
-import { config } from "@repo/eslint-config/base";
+import config from "@repo/eslint-config";
 
 /** @type {import("eslint").Linter.Config} */
 export default [
-  ...config,
+  ...config.configs.base,
   {
     ignores: ["cypress/reports/"],
   },

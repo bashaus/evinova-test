@@ -1,7 +1,8 @@
+import z from "zod";
+
 import { createUser } from "@/endpoints/create-user";
 import { createUserRequestFactory } from "@/endpoints/create-user/factory";
 import { createUserResponseSchema } from "@/endpoints/create-user/schema";
-import z from "zod";
 
 describe("createUser", () => {
   it("should create a valid user", async () => {

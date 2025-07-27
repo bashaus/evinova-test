@@ -1,4 +1,4 @@
-import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Then, When } from "@badeball/cypress-cucumber-preprocessor";
 
 When("I click on the accordion trigger for {string}", (label: string) => {
   cy.contains("button", label).click();
