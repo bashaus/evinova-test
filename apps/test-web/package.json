@@ -3,6 +3,8 @@
   "scripts": {
     "dev": "cypress open",
     "exec": "cypress run",
+    "exec-chrome": "cypress run --browser chrome",
+    "exec-firefox": "cypress run --browser firefox",
     "lint": "eslint ."
   },
   "dependencies": {

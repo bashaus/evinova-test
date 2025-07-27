@@ -3,36 +3,22 @@
 This repository contains two end-to-end test suites:
 
 - `test-web`: built with **Cypress** and **Cucumber (Gherkin)** to ensure high-confidence quality assurance testing for the frontend application. It follows a **Behavior-Driven Development (BDD)** approach using human-readable feature files and reusable step definitions written in **TypeScript**.
-- `test-api`: built with **Jest**, **Axios**, **Faker** and **Fishery**.
+- `test-api`: an API automation framework using **Jest** for testing and **Zod** for schema validation. It features a modular design, tests the Reqres API for user retrieval, creation, and error handling and uses **faker** and **fishery** for dynamic data.
 
-# 🚀 Getting Started
+## 🚀 Getting Started
 
-## 🔧 Prerequisites
+### 🔧 Prerequisites
 
 - Node.js >= 18.x
 - npm
 
-## 📦 Install Dependencies
+### 📦 Install Dependencies
 
+```bash
 npm install
-
-# 🧪 Running the Tests
-
-## ✅ Run Cypress in Interactive Mode (UI)
-
-```bash
-npx cypress open
 ```
 
-This will open the Cypress Test Runner, allowing you to select and run feature files in an interactive browser window.
-
-## ⚙️ Run Tests in Headless Mode (CI / Terminal)
-
-```bash
-npx cypress run
-```
-
-# Lint & Format
+## Lint & Format
 
 ```bash
 npm run lint
