@@ -28,13 +28,13 @@ jobs:
 
       - name: "cy: run ${{ matrix.browser }}"
         working-directory: apps/test-web
-        run: npx cypress run --browser ${{ matrix.browser }}
+        run: npx cypress run --browser "${{ matrix.browser }}"
 
       - name: "cy: report ${{ matrix.browser }}"
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: cypress-report-${{ matrix.browser }}
+          name: "cypress-report-${{ matrix.browser }}"
           path: apps/test-web/cypress/reports
 
       ###

@@ -1,0 +1,37 @@
+name: lighthouse
+
+on:
+  - push
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        url:
+          - "https://www.evinova.com/"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: "node: install"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.15.0
+
+      - name: "lhci: install"
+        run: npm install -g @lhci/cli
+
+      - name: "lhci: run"
+        run: |
+          lhci autorun \
+            --collect.url="${{ matrix.url }}" \
+            --upload.target=filesystem \
+            --upload.outputDir=./lhci-results
+
+      - name: "lhci: store"
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: ./lhci-results
