@@ -10,3 +10,10 @@ When(
     cy.getFieldByLabel(label).type(value);
   },
 );
+
+When(
+  "I select {string} in the field for {string}",
+  (value: string, label: string) => {
+    cy.getFieldByLabel(label).select(value);
+  },
+);

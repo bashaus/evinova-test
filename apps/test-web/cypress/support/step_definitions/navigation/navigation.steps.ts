@@ -4,6 +4,10 @@ Given("I am on the homepage", () => {
   cy.visit("/");
 });
 
+Given("I am on the platform page", () => {
+  cy.visit("/platform");
+});
+
 Given("I am on the contact page", () => {
   cy.visit("/contact-us");
 });
