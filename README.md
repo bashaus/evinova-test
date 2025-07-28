@@ -51,3 +51,15 @@ npm install
 - Uses commitlint to check the quality of git commit messages.
 - Contains a list of vscode extensions.
 - Utilises **.editorconfig** to ensure consistent code formatting.
+
+### Continuous integration
+
+You can see the [GitHub actions](https://github.com/bashaus/evinova-test/actions/)
+for the evinova-test. On each push, these include:
+
+- Running lighthouse CI on the website and reporting if the status falls below thresholds.
+- Running jest in the pipeline for test-api
+- Running cypress in the pipeline for test-web
+- Running linting on the entire application
+
+You may see some of the pipelines failing - this is expected as the application is not adhering to the prescribed web standards.

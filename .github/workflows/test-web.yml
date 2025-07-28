@@ -36,21 +36,3 @@ jobs:
         with:
           name: "cypress-report-${{ matrix.browser }}"
           path: apps/test-web/cypress/reports
-
-      ###
-      ### For the future
-      ###
-
-      # - name: Upload Cypress videos
-      #   if: always()
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: cypress-videos-${{ matrix.browser }}
-      #     path: apps/test-web/cypress/videos
-
-      # - name: Upload Cypress screenshots
-      #   if: always()
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: cypress-screenshots-${{ matrix.browser }}
-      #     path: apps/test-web/cypress/screenshots

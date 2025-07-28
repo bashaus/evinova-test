@@ -1,0 +1,29 @@
+name: test-api
+
+on:
+  - push
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: "node: install"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.15.0
+
+      - name: "npm: install"
+        run: npm install
+
+      - name: "npm: test"
+        working-directory: apps/test-api
+        run: npm test -- --coverage
+
+      - name: "npm: report"
+        uses: actions/upload-artifact@v4
+        with:
+          name: "jest-coverage"
+          path: apps/test-api/coverage
