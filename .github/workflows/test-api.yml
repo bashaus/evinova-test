@@ -21,6 +21,9 @@ jobs:
       - name: "npm: test"
         working-directory: apps/test-api
         run: npm test -- --coverage
+        env:
+          REQRES_IN_API_BASE_URL: ${{ secrets.REQRES_IN_API_BASE_URL }}
+          REQRES_IN_API_KEY: ${{ secrets.REQRES_IN_API_KEY }}
 
       - name: "npm: report"
         uses: actions/upload-artifact@v4
